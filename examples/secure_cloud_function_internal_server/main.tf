@@ -74,7 +74,8 @@ module "secure_harness" {
 
   serverless_project_extra_apis = {
     "prj-secure-cloud-function" = [
-      "opsconfigmonitoring.googleapis.com"
+      "cloudfunctions.googleapis.com", "cloudbuild.googleapis.com", "eventarc.googleapis.com", "eventarcpublishing.googleapis.com", "opsconfigmonitoring.googleapis.com"
+    ]
   }
 }
 
@@ -86,7 +87,7 @@ module "cloudfunction_source_bucket" {
   name          = "bkt-${local.location}-${module.secure_harness.serverless_project_numbers[module.secure_harness.serverless_project_ids[0]]}-cfv2-zip-files"
   location      = local.location
   storage_class = "REGIONAL"
-  force_destroy = true
+  force_destroy = truete
 
   encryption = {
     default_kms_key_name = module.secure_harness.artifact_registry_key
