@@ -73,7 +73,9 @@ module "secure_harness" {
   ]
 
   serverless_project_extra_apis = {
-    "prj-secure-cloud-function" = ["networksecurity.googleapis.com", "cloudfunctions.googleapis.com", "cloudbuild.googleapis.com", "eventarc.googleapis.com", "eventarcpublishing.googleapis.com"]
+    "prj-secure-cloud-function" = [
+      "cloudfunctions.googleapis.com", "cloudbuild.googleapis.com", "eventarc.googleapis.com", "eventarcpublishing.googleapis.com", "opsconfigmonitoring.googleapis.com"
+    ]
   }
 }
 
